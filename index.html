@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Pogaru Manoj Sharma | Product Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #000000;
+            --item-bg: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --electric-blue: #3b82f6;
+            --accent-hover: #60a5fa;
+            --border-color: #27272a;
+            --nav-bg: rgba(0, 0, 0, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 0.8rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 0.5rem; }
+        
+        .nav-links a { 
+            color: var(--text-secondary); 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: 0.3s; 
+        }
+
+        .nav-links a.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--electric-blue);
+            border: 1px solid var(--electric-blue);
+        }
+
+        .nav-cv-btn {
+            background: var(--electric-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* Hero */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 10rem 0 6rem; }
+        .hero-text { flex: 1.5; }
+        .hero-text h2 { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1rem; }
+        .hero-text h1 { font-size: 3.2rem; line-height: 1.1; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+        .hero-text p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 500px; }
+
+        .profile-mask {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+        }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Impact Grid */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 6rem; }
+        .impact-card { background: var(--item-bg); padding: 2rem; border-radius: 10px; border: 1px solid var(--border-color); text-align: center; }
+        .impact-value { font-size: 2.4rem; color: var(--electric-blue); font-weight: 800; display: block; }
+        .impact-label { color: var(--text-secondary); font-size: 0.75rem; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* Case Studies */
+        section { padding: 3rem 0; }
+        .section-header { margin-bottom: 3.5rem; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 800; }
+
+        .case-study { margin-bottom: 5rem; border: 1px solid var(--border-color); padding: 3rem; border-radius: 16px; background: #050505; }
+        .case-category { color: var(--electric-blue); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .case-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 2.5rem; letter-spacing: -0.02em; }
+        
+        .case-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+        .case-sidebar h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.6rem; letter-spacing: 0.05em; }
+        .case-sidebar p { font-weight: 800; margin-bottom: 2.5rem; font-size: 1.2rem; color: #fff; }
+
+        .case-main h4 { color: var(--electric-blue); margin: 0 0 0.6rem; font-size: 1rem; font-weight: 700; }
+        .case-main p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; }
+
+        /* Toolkit */
+        .toolkit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 6rem; }
+        .tool-card { background: var(--item-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
+        .tool-card h3 { color: var(--electric-blue); font-size: 1.1rem; margin-bottom: 1.5rem; border-left: 3px solid var(--electric-blue); padding-left: 1rem; }
+        .tool-list { list-style: none; }
+        .tool-list li { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; align-items: baseline; }
+        .tool-list li::before { content: '▪'; color: var(--electric-blue); margin-right: 10px; }
+
+        /* Journey Map */
+        .journey-map { position: relative; padding-left: 3rem; border-left: 2px solid var(--border-color); margin-bottom: 8rem; }
+        .journey-point { position: relative; margin-bottom: 4rem; }
+        .journey-point::before { content: ''; position: absolute; left: -3.55rem; top: 0.5rem; width: 1.1rem; height: 1.1rem; background: var(--electric-blue); border-radius: 50%; box-shadow: 0 0 15px var(--electric-blue); }
+        .point-date { color: var(--electric-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.4rem; }
+        .point-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .point-company { color: var(--text-secondary); font-size: 1rem; }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(145deg, #0a0a0a, #111111);
+            border: 1px solid var(--electric-blue);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 6rem 0;
+        }
+        .contact-card h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .contact-links { display: flex; justify-content: center; gap: 3rem; margin: 2rem 0; }
+        .contact-item { text-decoration: none; color: var(--text-primary); font-weight: 700; font-size: 1.1rem; }
+
+        .btn-xl {
+            display: inline-block;
+            background: var(--electric-blue);
+            color: #fff;
+            padding: 1.2rem 3rem;
+            border-radius: 10px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 800px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 7rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .case-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .profile-mask { width: 280px; height: 280px; margin: 0 auto; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#home" id="nav-home">Home</a>
+                <a href="#experience" id="nav-experience">Experience</a>
+                <a href="#toolkit" id="nav-toolkit">Toolkit</a>
+                <a href="#journey" id="nav-journey">Journey</a>
+            </div>
+            <a href="Manish_Pogaru_Product_Manager.pdf" download class="nav-cv-btn">Download CV</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h2>Manish Pogaru Manoj Sharma</h2>
+                <h1>Leading with Conviction.<br>Shipping with Impact.</h1>
+                <p>Strategic Product Leader with 7+ years across voice AI, travel tech, and healthcare. Currently seeking new Product Manager or Product Owner roles.</p>
+                <a href="https://www.linkedin.com/in/manish-pogaru-manoj-sharma-56569311b/" target="_blank" class="btn-xl" style="padding: 1rem 2rem; font-size: 1rem;">Let's Connect</a>
+            </div>
+            <div class="profile-mask">
+                <img src="profile.jpg" alt="Manish Pogaru Manoj Sharma" class="profile-img" onerror="this.src='https://via.placeholder.com/320x320/0a0a0a/3b82f6?text=MP'">
+            </div>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card"><span class="impact-value">£5.4M+</span><span class="impact-label">Annual Revenue</span></div>
+            <div class="impact-card"><span class="impact-value">1.5M+</span><span class="impact-label">Users Scaled</span></div>
+            <div class="impact-card"><span class="impact-value">95%</span><span class="impact-label">UX Satisfaction</span></div>
+            <div class="impact-card"><span class="impact-value">40%</span><span class="impact-label">Efficiency Gain</span></div>
+        </div>
+
+        <section id="experience">
+            <div class="section-header"><h2>Strategic Case Studies</h2></div>
+            
+            <div class="case-study">
+                <div class="case-category">0 → 1 Launch</div>
+                <div class="case-title">Healthtech Compliance Engine at Encon Pharma</div>
+                <div class="case-grid">
+                    <div class="case-sidebar">
+                        <h4>Primary Outcome</h4><p>First Product Function Build</p>
+                        <h4>Speed to Market</h4><p>6-Week Delivery</p>
+                    </div>
+                    <div class="case-main">
+                        <h4>The Context</h4>
+                        <p>Joined as the first product hire at an early-stage startup to address gaps in the UK community pharmacy compliance market.</p>
+                        <h4>The Action</h4>
+                        <p>Established the product delivery process and prioritization frameworks from scratch. Designed a self-service onboarding flow to eliminate manual operation interventions.</p>
+                        <h4>The Result</h4>
+                        <p>Delivered the pharmacy onboarding flow in 6 weeks, validating the GTM approach and ensuring NHS/GPhC regulatory alignment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-category">Revenue & Growth</div>
+                <div class="case-title">Scaling Marketplace Revenue at Travel Chapter</div>
+                <div class="case-grid">
+                    <div class="case-sidebar">
+                        <h4>Primary Outcome</h4><p>£5M Annual Revenue</p>
+                        <h4>Efficiency Gain</h4><p>40% Reduction in Integration Time</p>
+                    </div>
+                    <div class="case-main">
+                        <h4>The Context</h4>
+                        <p>Embedded in frontline customer operations to identify booking flows and guest pain points before transitioning to product ownership.</p>
+                        <h4>The Action</h4>
+                        <p>Identified HomeToGo as a high-value marketplace opportunity. Built the business case and led end-to-end integration for 15,000+ vacation rental properties. Pivoted leadership focus from a £20k/year project to a £35k/month Lodge integration.</p>
+                        <h4>The Result</h4>
+                        <p>Generated £5M in incremental revenue and built a repeatable framework that slashed future integration timelines by 40%.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-category">UX Transformation</div>
+                <div class="case-title">FORA Financials: UX Redesign & Adoption</div>
+                <div class="case-grid">
+                    <div class="case-sidebar">
+                        <h4>Outcome</h4><p>95% User Satisfaction</p>
+                        <h4>Growth</h4><p>13% Adoption Increase</p>
+                    </div>
+                    <div class="case-main">
+                        <h4>The Context</h4>
+                        <p>Drove UX strategy for FORA Financials, leading design workshops and user research to translate complex financial workflows into intuitive interfaces.</p>
+                        <h4>The Action</h4>
+                        <p>Conducted iterative usability testing and mapped user journeys. Used findings to inform roadmap prioritization, focusing on high-impact friction reduction.</p>
+                        <h4>The Result</h4>
+                        <p>Moved user satisfaction from a 12% baseline to a 95% peak, directly contributing to a 13% increase in platform adoption within two quarters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-category">AI & Large Scale Systems</div>
+                <div class="case-title">Alexa "Voice for All": Scaling to 18 Indian Languages</div>
+                <div class="case-grid">
+                    <div class="case-sidebar">
+                        <h4>Primary Outcome</h4><p>1.5M User Increase</p>
+                        <h4>Quality Boost</h4><p>55% Accuracy Improvement</p>
+                    </div>
+                    <div class="case-main">
+                        <h4>The Context</h4>
+                        <p>Managed the product backlog for Alexa's voice assistant across Echo, Fire TV, and Amazon Music in the Indian market.</p>
+                        <h4>The Action</h4>
+                        <p>Implemented a "Phased Core" rollout. Prioritized high-impact core features (music, weather, timers) across 18 regional languages to ensure cultural relevance and response accuracy.</p>
+                        <h4>The Result</h4>
+                        <p>Raised the user base by 1.5M and delivered a 40% improvement in voice response quality by addressing latency and accent variation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-category">Technical Foundation</div>
+                <div class="case-title">Risk Prevention & Process Optimization at Amazon</div>
+                <div class="case-grid">
+                    <div class="case-sidebar">
+                        <h4>Efficiency</h4><p>Onboarding reduced by 66%</p>
+                        <h4>Accuracy</h4><p>>30% Error Rate Reduction</p>
+                    </div>
+                    <div class="case-main">
+                        <h4>The Context</h4>
+                        <p>Analyzed voice interaction data to identify root causes behind system failures for Alexa voice assistant.</p>
+                        <h4>The Action</h4>
+                        <p>Flagged a critical Echo Show display bug during beta testing that posed high reputational risk. Created standard operating procedures for the data services team.</p>
+                        <h4>The Result</h4>
+                        <p>Prevented system failures and cut transition time for new team members from 3 months to 1 month through structured training documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toolkit">
+            <div class="section-header"><h2>Operator Toolkit</h2></div>
+            <div class="toolkit-grid">
+                <div class="tool-card">
+                    <h3>Product Strategy</h3>
+                    <ul class="tool-list">
+                        <li>Vision & Roadmaps</li>
+                        <li>GTM Strategy</li>
+                        <li>RICE/MoSCoW Prioritization</li>
+                        <li>Competitive Analysis</li>
+                    </ul>
+                </div>
+                <div class="tool-card">
+                    <h3>Discovery & UX</h3>
+                    <ul class="tool-list">
+                        <li>Design Thinking (Figma)</li>
+                        <li>User Journey Mapping</li>
+                        <li>Customer Interviews</li>
+                        <li>A/B Testing</li>
+                    </ul>
+                </div>
+                <div class="tool-card">
+                    <h3>Technical & Data</h3>
+                    <ul class="tool-list">
+                        <li>SQL & Data Analytics</li>
+                        <li>API Integration Management</li>
+                        <li>Power BI Dashboards</li>
+                        <li>Root Cause Analysis</li>
+                    </ul>
+                </div>
+                <div class="tool-card">
+                    <h3>Agile Mastery</h3>
+                    <ul class="tool-list">
+                        <li>Certified SAFe POPM</li>
+                        <li>Professional Scrum (PSPO)</li>
+                        <li>Certified Scrum Master (CSM)</li>
+                        <li>Continuous Delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey">
+            <div class="section-header"><h2>The Journey</h2></div>
+            <div class="journey-map">
+                <div class="journey-point">
+                    <div class="point-date">Feb 2026 – Apr 2026</div>
+                    <div class="point-title">Product Owner | Encon Pharma</div>
+                </div>
+                <div class="journey-point">
+                    <div class="point-date">Jun 2024 – Feb 2026</div>
+                    <div class="point-title">Technical Product Owner | Travel Chapter</div>
+                </div>
+                <div class="journey-point">
+                    <div class="point-date">Apr 2022 – Mar 2023</div>
+                    <div class="point-title">Product Owner (UX) | SPR Consultech</div>
+                </div>
+                <div class="journey-point">
+                    <div class="point-date">May 2020 – Nov 2021</div>
+                    <div class="point-title">Associate Product Manager | Amazon</div>
+                </div>
+                <div class="journey-point">
+                    <div class="point-date">Aug 2017 – May 2020</div>
+                    <div class="point-title">ML Data Associate | Amazon</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-card">
+            <h2>Let's build for millions.</h2>
+            <div class="contact-links">
+                <a href="mailto:manojsharmamanish@outlook.com" class="contact-item">Email Me</a>
+                <a href="https://www.linkedin.com/in/manish-pogaru-manoj-sharma-56569311b/" target="_blank" class="contact-item">LinkedIn</a>
+            </div>
+            <a href="Manish_Pogaru_Product_Manager.pdf" download class="btn-xl">Download Master CV</a>
+        </div>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (pageYOffset >= section.offsetTop - 150) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
