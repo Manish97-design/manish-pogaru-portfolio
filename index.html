@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,7 +115,7 @@
 
         /* Case Studies */
         section { padding: 3rem 0; }
-        .section-header { margin-bottom: 3.5rem; }
+        .section-header { margin-bottom: 3.5rem; text-align: center;}
         .section-header h2 { font-size: 2.2rem; font-weight: 800; }
 
         .case-study { margin-bottom: 5rem; border: 1px solid var(--border-color); padding: 3rem; border-radius: 16px; background: #050505; }
@@ -130,6 +129,14 @@
         .case-main h4 { color: var(--electric-blue); margin: 0 0 0.6rem; font-size: 1rem; font-weight: 700; }
         .case-main p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; }
 
+        /* Journey Styling - Refined for Spacing */
+        .journey-wrapper { max-width: 720px; margin: 0 auto; }
+        .journey-intro { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 4rem; line-height: 1.8; }
+        .chapter { margin-bottom: 5rem; }
+        .chapter h3 { color: var(--electric-blue); font-size: 1.7rem; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
+        .chapter p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.85; }
+        .journey-footer { font-style: italic; color: var(--text-secondary); font-size: 0.95rem; border-top: 1px solid var(--border-color); padding-top: 2.5rem; text-align: center; margin-top: 2rem; }
+
         /* Toolkit */
         .toolkit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 6rem; }
         .tool-card { background: var(--item-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
@@ -138,7 +145,7 @@
         .tool-list li { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; align-items: baseline; }
         .tool-list li::before { content: '▪'; color: var(--electric-blue); margin-right: 10px; }
 
-        /* Journey Map */
+        /* Timeline (Experience timeline) */
         .journey-map { position: relative; padding-left: 3rem; border-left: 2px solid var(--border-color); margin-bottom: 8rem; }
         .journey-point { position: relative; margin-bottom: 4rem; }
         .journey-point::before { content: ''; position: absolute; left: -3.55rem; top: 0.5rem; width: 1.1rem; height: 1.1rem; background: var(--electric-blue); border-radius: 50%; box-shadow: 0 0 15px var(--electric-blue); }
@@ -186,8 +193,9 @@
             <div class="nav-links">
                 <a href="#home" id="nav-home">Home</a>
                 <a href="#experience" id="nav-experience">Experience</a>
+                <a href="#my-journey" id="nav-journey">Journey</a>
                 <a href="#toolkit" id="nav-toolkit">Toolkit</a>
-                <a href="#journey" id="nav-journey">Journey</a>
+                <a href="#journey-timeline" id="nav-journey-timeline">Timeline</a>
             </div>
             <a href="Manish_Pogaru_Product_Manager.pdf" download class="nav-cv-btn">Download CV</a>
         </div>
@@ -209,7 +217,6 @@
         <div class="impact-grid">
             <div class="impact-card"><span class="impact-value">£5.4M+</span><span class="impact-label">Annual Revenue</span></div>
             <div class="impact-card"><span class="impact-value">1.5M+</span><span class="impact-label">Users Scaled</span></div>
-            <div class="impact-card"><span class="impact-value">95%</span><span class="impact-label">UX Satisfaction</span></div>
             <div class="impact-card"><span class="impact-value">40%</span><span class="impact-label">Efficiency Gain</span></div>
         </div>
 
@@ -259,7 +266,7 @@
                 <div class="case-title">FORA Financials: UX Redesign & Adoption</div>
                 <div class="case-grid">
                     <div class="case-sidebar">
-                        <h4>Outcome</h4><p>95% User Satisfaction</p>
+                        <h4>Outcome</h4><p>12% Satisfaction Lift</p>
                         <h4>Growth</h4><p>13% Adoption Increase</p>
                     </div>
                     <div class="case-main">
@@ -268,7 +275,7 @@
                         <h4>The Action</h4>
                         <p>Conducted iterative usability testing and mapped user journeys. Used findings to inform roadmap prioritization, focusing on high-impact friction reduction.</p>
                         <h4>The Result</h4>
-                        <p>Moved user satisfaction from a 12% baseline to a 95% peak, directly contributing to a 13% increase in platform adoption within two quarters.</p>
+                        <p>Drove a 12% improvement in user satisfaction scores measured through iterative usability testing with 13+ users, and contributed to a 13% increase in platform adoption within two quarters.</p>
                     </div>
                 </div>
             </div>
@@ -291,23 +298,35 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="case-study">
-                <div class="case-category">Technical Foundation</div>
-                <div class="case-title">Risk Prevention & Process Optimization at Amazon</div>
-                <div class="case-grid">
-                    <div class="case-sidebar">
-                        <h4>Efficiency</h4><p>Onboarding reduced by 66%</p>
-                        <h4>Accuracy</h4><p>>30% Error Rate Reduction</p>
-                    </div>
-                    <div class="case-main">
-                        <h4>The Context</h4>
-                        <p>Analyzed voice interaction data to identify root causes behind system failures for Alexa voice assistant.</p>
-                        <h4>The Action</h4>
-                        <p>Flagged a critical Echo Show display bug during beta testing that posed high reputational risk. Created standard operating procedures for the data services team.</p>
-                        <h4>The Result</h4>
-                        <p>Prevented system failures and cut transition time for new team members from 3 months to 1 month through structured training documentation.</p>
-                    </div>
+        <section id="my-journey">
+            <div class="section-header">
+                <h2>My Journey</h2>
+            </div>
+            
+            <div class="journey-wrapper">
+                <div class="journey-intro">
+                    <p>Seven years ago, I started my career at Amazon working on Alexa. Today, I help build healthcare compliance software for UK community pharmacies. The path between those two points taught me more about product ownership than any certification ever could.</p>
+                </div>
+
+                <div class="chapter">
+                    <h3>Making Alexa Work for India</h3>
+                    <p>India does not speak one language. It speaks hundreds. At Amazon, my proudest work was "Voice for All," the initiative to bring Alexa to the Indian market across 18 regional languages. Each one came with its own dialects and cultural context. My job was to figure out what users actually needed and ensure the team worked on the right things. By focusing on voice recognition quality, we cut recognition errors by 30% and grew the user base by 1.5 million.</p>
+                </div>
+
+                <div class="chapter">
+                    <h3>Learning the Business from the Front Line</h3>
+                    <p>After my Master's at the University of East Anglia, I took a customer-facing operations job at Travel Chapter to understand the booking ecosystem from the ground up—every complaint and friction point dashboards wouldn't show. That domain knowledge paid off when I moved into Technical Product Owner, where I led the HomeToGo integration in week one and generated £5M in incremental revenue. The best decisions came from proximity to the customer.</p>
+                </div>
+
+                <div class="chapter">
+                    <h3>Building From Zero in Healthcare</h3>
+                    <p>Most recently, I joined Encon Pharma as their first product hire. I built the sprint cadence and product roadmap from scratch. Within six weeks, I delivered a self-service pharmacy onboarding flow that validated the GTM approach. Healthcare compliance taught me precision and discipline: when patient safety is at stake, stakeholder trust matters more than speed.</p>
+                </div>
+
+                <div class="journey-footer">
+                    <p>Start with the problem. Get close to the customer. Ship, then iterate.</p>
                 </div>
             </div>
         </section>
@@ -354,8 +373,8 @@
             </div>
         </section>
 
-        <section id="journey">
-            <div class="section-header"><h2>The Journey</h2></div>
+        <section id="journey-timeline">
+            <div class="section-header"><h2>Timeline</h2></div>
             <div class="journey-map">
                 <div class="journey-point">
                     <div class="point-date">Feb 2026 – Apr 2026</div>
